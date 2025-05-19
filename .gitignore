@@ -1,0 +1,8 @@
+.vscode
+
+*py[cod]
+__pycache__
+
+tests
+
+*.sh
