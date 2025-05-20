@@ -1,7 +1,5 @@
 # A Python library for parsing OBO (Open Biological and Biomedical Ontologies) files.
 
-This is a Python library for parsing OBO files. It is based on the [OBO format specification](http://owl.cs.manchester.ac.uk/oboformat/doc/obo-syntax.html) and is designed to be easy to use and flexible.
-
 ## Installation
 
 ```
@@ -32,5 +30,3 @@ for term in obo.terms:
     print(term)
 
 ```
-
-
