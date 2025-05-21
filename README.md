@@ -1,4 +1,4 @@
-# A Python library for parsing OBO (Open Biological and Biomedical Ontologies) files.
+# A Python library for parsing [OBO(Open Biological and Biomedical Ontologies)](https://obofoundry.org/) files.
 
 ## Installation
 
@@ -8,7 +8,7 @@ pip install obo_parser
 
 ## Usage
 
-### Use in Commmand Line
+### Use in Command Line
 
 ```bash
 obo_parser headers -f path/to/obo_file.obo
@@ -28,5 +28,4 @@ print(obo.headers)
 
 for term in obo.terms:
     print(term)
-
 ```
