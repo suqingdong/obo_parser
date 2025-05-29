@@ -3,6 +3,34 @@ from collections import defaultdict
 from . import utils
 
 
+class Term(object):
+    """
+    A class to represent a term in the OBO file.
+
+    Attributes:
+        data (dict): A dictionary containing the term data.
+    """
+    def __init__(self, data):
+        self._data = data
+        for k, v in data.items():
+            setattr(self, k, v)
+
+    def __repr__(self):
+        return f'Term({self._data})'
+    
+    def __getitem__(self, key):
+        return self._data[key]
+    
+    def __iter__(self):
+        return iter(self._data.items())
+
+    def __len__(self):
+        return len(self._data)
+    
+    def get(self, key, default=None):
+        return self._data.get(key, default)
+
+
 class OBO_Parser(object):
     """
     A class to parse OBO (Open Biomedical Ontology) files.
@@ -32,7 +60,7 @@ class OBO_Parser(object):
     @property
     def terms(self):
         """
-        Generator function to yield terms from the OBO file.
+        Generator function to yield Term(terms) from the OBO file.
         
         Yields:
             dict: A dictionary representing a term in the OBO file.
@@ -60,11 +88,11 @@ class OBO_Parser(object):
             if line == '[Term]':
                 start = True
                 if term:
-                    yield term
+                    yield Term(term)
                 term = {}
                 continue
             elif line == '[Typedef]':
-                yield term
+                yield Term(term)
                 break
 
             if start:

@@ -28,4 +28,13 @@ print(obo.headers)
 
 for term in obo.terms:
     print(term)
+
+    # accessing term attribute
+    print(term.id, term.name)
+    print(term['id'], term['name'])
+    print(term.get('id'), term.get('name'))
+
+    # accessing term dict
+    print(term._data)
+    print(dict(term))
 ```
