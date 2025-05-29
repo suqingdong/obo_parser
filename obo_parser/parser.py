@@ -59,7 +59,6 @@ class OBO_Parser(object):
         for line in utils.get_lines(self.path):
             if line == '[Term]':
                 start = True
-                print('')
                 if term:
                     yield term
                 term = {}
